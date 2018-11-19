@@ -1,74 +1,82 @@
 /*************************************************************************
-                           Xxx  -  description
+                           TrajetCompose  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Réalisation de la classe <Xxx> (fichier Xxx.cpp) ------------
+//---------- Réalisation de la classe <TrajetCompose> (fichier TrajetCompose.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
+#include <stdio.h>
 #include <iostream>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "Xxx.h"
+#include "TrajetCompose.h"
 
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-// type Xxx::Méthode ( liste des paramètres )
+void TrajetCompose::Affiche ( void )
 // Algorithme :
 //
-//{
-//} //----- Fin de Méthode
+{
+  trajetsComposant.Afficher();
+} //----- Fin de Méthode
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Xxx & Xxx::operator = ( const Xxx & unXxx )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
+// TrajetCompose & TrajetCompose::operator = ( const TrajetCompose & unTrajetCompose )
+// // Algorithme :
+// //
+// {
+// } //----- Fin de operator =
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Xxx::Xxx ( const Xxx & unXxx )
+TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose ) :
+  trajetsComposant(unTrajetCompose.trajetsComposant),
+  villeDepart(unTrajetCompose.villeDepart),
+  villeFin(unTrajetCompose.villeFin)
+// Algorithme :
+//
+{
+
+#ifdef MAP
+    cout << "Appel au constructeur de copie de <TrajetCompose>" << endl;
+#endif
+} //----- Fin de TrajetCompose (constructeur de copie)
+
+
+TrajetCompose::TrajetCompose ( CollectionTrajet collection ) :
+  trajetsComposant(collection),
+  villeDepart(trajetsComposant.premier().villeDepart),
+  villeFin(trajetsComposant.dernier().villeFin)
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Xxx>" << endl;
+    cout << "Appel au constructeur de <TrajetCompose>" << endl;
 #endif
-} //----- Fin de Xxx (constructeur de copie)
+} //----- Fin de TrajetCompose
 
 
-Xxx::Xxx ( )
+TrajetCompose::~TrajetCompose ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Xxx>" << endl;
+    cout << "Appel au destructeur de <TrajetCompose>" << endl;
 #endif
-} //----- Fin de Xxx
-
-
-Xxx::~Xxx ( )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au destructeur de <Xxx>" << endl;
-#endif
-} //----- Fin de ~Xxx
+} //----- Fin de ~TrajetCompose
 
 
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
-
