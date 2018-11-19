@@ -28,20 +28,10 @@ class TrajetSimple : public Trajet
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste des paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
+  
 
 //------------------------------------------------- Surcharge d'opérateurs
-    //TrajetSimple & operator = ( const TrajetSimple & unXxx );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
+   
 
 //-------------------------------------------- Constructeurs - destructeur
     TrajetSimple ( String villeDepart, String villeArrivee, eMoyenDeTransport moyenDeTransport );
