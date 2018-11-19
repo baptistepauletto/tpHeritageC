@@ -44,17 +44,11 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    TrajetSimple ( const TrajetSimple & unXxx );
+    TrajetSimple ( String villeDepart, String villeArrivee, eMoyenDeTransport moyenDeTransport );
     // Mode d'emploi (constructeur de copie) :
-    //
+    // 
     // Contrat :
-    //
-
-    TrajetSimple ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+    // moyenDeTransport doit être un des élements suivants : {Train, Auto, Bateau, Avion, Velo}
 
     virtual ~TrajetSimple ( );
     // Mode d'emploi :
