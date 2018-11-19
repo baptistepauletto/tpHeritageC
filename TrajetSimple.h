@@ -34,7 +34,7 @@ public:
    
 
 //-------------------------------------------- Constructeurs - destructeur
-    TrajetSimple ( String villeDepart, String villeArrivee, eMoyenDeTransport moyenDeTransport );
+    TrajetSimple ( string villeDepart, string villeArrivee, eMoyenDeTransport moyenDeTransport );
     // Mode d'emploi (constructeur de copie) :
     // 
     // Contrat :

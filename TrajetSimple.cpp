@@ -21,20 +21,25 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-
+void TrajetSimple::Afficher(void)
+// Algorithme :
+//
+{
+	cout << "de" << villeDepart << "à" << villeArrivee << "en" << MoyenDeTransport << endl;
+}//----- Fin de Afficher
 
 //-------------------------------------------- Constructeurs - destructeur
-TrajetSimple::TrajetSimple ( String vDepart, String vArrivee, eMoyenDeTransport mTransport)
+TrajetSimple::TrajetSimple ( string vDepart, string vArrivee, eMoyenDeTransport mTransport)
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Xxx>" << endl;
+    cout << "Appel au constructeur de copie de <TrajetSimple>" << endl;
 #endif
 	villeDepart = vDepart;
 	villeArrivee = vArrivee;
 	moyenDeTransport = mTransport;
-} //----- Fin de Xxx (constructeur de copie)
+} //----- Fin de TrajetSimple (constructeur de copie)
 
 
 TrajetSimple::~TrajetSimple ( )
@@ -42,9 +47,9 @@ TrajetSimple::~TrajetSimple ( )
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Xxx>" << endl;
+    cout << "Appel au destructeur de <TrajetSimple>" << endl;
 #endif
-} //----- Fin de ~Xxx
+} //----- Fin de ~TrajetSimple
 
 
 //------------------------------------------------------------------ PRIVE
