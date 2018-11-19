@@ -1,28 +1,28 @@
 /*************************************************************************
-                           Xxx  -  description
+                           TrajetSimple  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Interface de la classe <Xxx> (fichier Xxx.h) ----------------
-#if ! defined ( XXX_H )
-#define XXX_H
+//---------- Interface de la classe <TrajetSimple> (fichier TrajetSimple.h) ----------------
+#if ! defined ( TRAJETSIMPLE_H )
+#define TRAJETSIMPLE_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+#include Trajet.h
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
-
+enum eMoyenDeTransport {Train, Auto, Bateau, Avion, Velo};
 //------------------------------------------------------------------------
-// Rôle de la classe <Xxx>
-//
+// Rôle de la classe <TrajetSimple>
+//	Définir	un trajet par sa ville de départ, sa ville d'arrivée et son moyen de transport
 //
 //------------------------------------------------------------------------
 
-class Xxx : public Ancetre
+class TrajetSimple : public Trajet
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -36,7 +36,7 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Xxx & operator = ( const Xxx & unXxx );
+    //TrajetSimple & operator = ( const TrajetSimple & unXxx );
     // Mode d'emploi :
     //
     // Contrat :
@@ -44,19 +44,19 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Xxx ( const Xxx & unXxx );
+    TrajetSimple ( const TrajetSimple & unXxx );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Xxx ( );
+    TrajetSimple ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Xxx ( );
+    virtual ~TrajetSimple ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -68,10 +68,10 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-
+	eMoyenDeTransport moyenDeTransport;
 };
 
-//-------------------------------- Autres définitions dépendantes de <Xxx>
+//-------------------------------- Autres définitions dépendantes de <TrajetSimple>
 
-#endif // XXX_H
+#endif // TRAJETSIMPLE_H
 
