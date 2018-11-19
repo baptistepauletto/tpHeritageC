@@ -1,0 +1,55 @@
+Description de la répartition du graphe.
+
+La classe Catalogue est composée de : 
+
+	Un attribut privé : 
+		-trajetsDisponibles : liste de Trajets 
+
+	Plusieurs méthodes:
+		-ajouterTrajet qui prend en paramètre un Trajet t et l'ajoute à la liste de trajetsDisponibles.
+		-afficher (sans paramètre) qui va afficher la liste des tous le trajets sur la sortie standard.
+		- rechercherParcours qui prend en paramètre deux string, le nom d'une ville de départ et d'une ville d'arrivée et affiche sur la sortie standard tous les trajets de la liste qui relient correctement (selon les deux algorithmes demandés) la ville de départ et la ville d'arrivée.
+
+
+La classe Trajet est une classe abstraite:
+	
+	Deux attributs protégés :
+		-villeDepart qui est un string qui correspond à la ville de départ du trajet.
+		-villeFin qui est un string qui correspond à la ville d'arrivée du trajet.
+
+	Une méthode : 
+		-afficher qui affiche sur la sortie standard comment se déroule le trajet (ville de départ, ville d'arrivée, potentielles villes escales, et moyens de transports).
+
+
+La classe TrajetSimple hérite de la classe Trajet :
+	
+	Un attribut privée :
+		-moyenDeTransport qui est un string.
+
+La classe TrajetComposé hérite de la classe Trajet :
+
+	Un attribut privée : 
+		-trajetsComposant, qui est une liste de Trajets.
+
+
+Justification :
+
+Nous avons choisi la répartition précédante car elle permet de relier les différents types de trajets au catalogue. Le point clef est la classe abstraite Trajet qui effectue le lien. Chaque trajetSimple ou trajetComposé sont un certain type de trajet. 
+
+Chaque trajet possèdent une ville de départ, une ville d'arrivée qui sont ces attributs. Mais aussi, chaque trajet doit pouvoir etre affiché.
+
+Un trajet simple va donc hérité des caractéristiques de la classe Trajet, mais va ajouter le moyen de transport, qui permet de relier la ville de départ à la ville d'arrivée.
+
+Un trajet composé va aussi hérité des caractéristiques de la classe Trajet, mais en se distinguant d'un trajet simple de sa composition. En effet, un trajet composé va etre composé de trajets simples et/ou de trajets composés. Il y aura donc une succession de trajets qui sont relié par leur par des villes étapes (pour chaque ville de fin de trajet composant différent de la ville d'arrivée, il existe une même ville de départ de trajet composant). Ceci explique la liste de trajets.
+
+Le Catalogue permet donc d'intéragir avec l'utilisateur. Il a une liste de différents trajets. On peut ajouter des trajet au catalogue grâce à une méthode. On peut afficher l'ensemble des trajets du catalogue avec un méthode. On peut aussi rechercher un parcours reliant une ville de départ et une ville d'arrivée avec une méthode.  
+
+
+
+
+
+
+
+
+
+
