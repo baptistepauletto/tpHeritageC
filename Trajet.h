@@ -34,9 +34,9 @@ public:
     // Contrat :
     //
 
-    virtual std::string EnvoyerVilleDepart() const;
-    virtual std::string EnvoyerVilleArrive() const;
-
+    virtual char * EnvoyerVilleDepart() const;
+    virtual char * EnvoyerVilleArrive() const;
+    virtual char * EnvoyerMoyenDeTransport() const;
 
 //------------------------------------------------------------------ PRIVE
 
@@ -44,8 +44,8 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-   string villeDepart;
-   string villeArrivee;
+   char * villeDepart;
+   char * villeArrivee;
 
 };
 
