@@ -28,14 +28,14 @@ virtual class Trajet
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    virtual void Afficher ();
+    virtual void Afficher () const;
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual std::string EnvoyerVilleDepart();
-    virtual std::string EnvoyerVilleArrive();
+    virtual std::string EnvoyerVilleDepart() const;
+    virtual std::string EnvoyerVilleArrive() const;
 
 
 //------------------------------------------------------------------ PRIVE

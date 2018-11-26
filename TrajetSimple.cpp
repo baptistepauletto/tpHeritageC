@@ -21,18 +21,18 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-string TrajetSimple::EnvoyerVilleDepart()
+string TrajetSimple::EnvoyerVilleDepart() const
 {
 	return villeDepart;
 }
-string TrajetSimple::EnvoyerVilleArrive()
+string TrajetSimple::EnvoyerVilleArrive() const
 {
 	return villeArrivee;
 }
 
 
 
-void TrajetSimple::Afficher(void)
+void TrajetSimple::Afficher(void) const
 // Algorithme :
 //
 {

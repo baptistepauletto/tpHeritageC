@@ -28,7 +28,7 @@ using namespace std;
 //{
 //} //----- Fin de Méthode
 
-void Catalogue::Afficher()
+void Catalogue::Afficher() const
 {
   const int nbTrajets = trajetsDisponibles.EnvoyerCard();
   for (int i(0) ; i < nbTrajets; i++)
@@ -37,6 +37,17 @@ void Catalogue::Afficher()
     cout << iemeTrajet.Afficher() << '\n';
   }
 }
+
+void Catalogue::AjouterTrajet(const Trajet & t)
+{
+  trajetsDisponibles.Ajouter(t);
+}
+
+void Catalogue::rechercherParcoursSimple(const std::string & vDep,
+      const std::string & vFin) const{
+
+}
+
 
 
 

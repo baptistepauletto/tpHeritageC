@@ -12,7 +12,7 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include "Trajet.h"
-#include "CollectionTrajet"
+#include "CollectionTrajet.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -45,7 +45,7 @@ public:
     // Contrat : Le trajet doit exister, bien entendu.
     //
 
-    void rechercherParcours(const std::string & vDep,
+    void rechercherParcoursSimple(const std::string & vDep,
 			    const std::string & vFin) const;
     // Mode d'emploi : Nous récupérons dans la collection de trajets,
     // ceux qui possèdent une ville de départ ET une ville d'arrivée

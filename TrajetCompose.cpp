@@ -24,14 +24,14 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-string TrajetCompose::EnvoyerVilleDepart()
+string TrajetCompose::EnvoyerVilleDepart() const
 {
   //on récupère le premier trajet de la collection et on affiche son départ
   Trajet premierTrajet = trajetsComposants.EnvoyerNiemeTrajet(0);
 	return premierTrajet.EnvoyerVilleDepart();
 }
 
-string TrajetCompose::EnvoyerVilleArrive()
+string TrajetCompose::EnvoyerVilleArrive() const
 {
   //on récupère le dernier trajet de la collection et on affiche son arrivée
   const int nbTrajets = trajetsComposants.EnvoyerCard();
@@ -42,7 +42,7 @@ string TrajetCompose::EnvoyerVilleArrive()
 
 
 
-void TrajetCompose::Afficher ( void )
+void TrajetCompose::Afficher ( void ) const
 // Algorithme :
 //
 {
