@@ -1047,7 +1047,7 @@
 							"top": 584,
 							"width": 60,
 							"height": 25,
-							"text": "1..n"
+							"text": "1..1"
 						},
 						{
 							"_type": "UMLTextView",
@@ -1057,10 +1057,10 @@
 							},
 							"font": "Arial;13;0",
 							"left": 344,
-							"top": 136,
+							"top": 128,
 							"width": 60,
 							"height": 25,
-							"text": "0..n"
+							"text": "0..1"
 						},
 						{
 							"_type": "UMLClassView",
@@ -1298,13 +1298,30 @@
 											"height": 13,
 											"text": "+envoyerNiemeTrajet(int i)",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFnUFu4clA6OEg=",
+											"_parent": {
+												"$ref": "AAAAAAFnLOEGreCss3I="
+											},
+											"model": {
+												"$ref": "AAAAAAFnUFu4XVA3WYQ="
+											},
+											"font": "Arial;13;0",
+											"left": 213,
+											"top": 343,
+											"width": 249.51904296875,
+											"height": 13,
+											"text": "+envoyerCard()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 208,
 									"top": 278,
 									"width": 259.51904296875,
-									"height": 68
+									"height": 83
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1344,7 +1361,7 @@
 							"left": 208,
 							"top": 200,
 							"width": 259.51904296875,
-							"height": 146,
+							"height": 161,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnLOEGrOCmU1g="
 							},
@@ -2048,7 +2065,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 321,
-									"top": 364,
+									"top": 379,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -2068,7 +2085,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 307,
-									"top": 367,
+									"top": 382,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -2088,7 +2105,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 348,
-									"top": 360,
+									"top": 375,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -2132,7 +2149,7 @@
 							"tail": {
 								"$ref": "AAAAAAFnLFFsp/vKZaA="
 							},
-							"points": "528:584;336:584;336:345",
+							"points": "528:584;336:584;336:360",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnLPTcm+bfpcw="
@@ -2618,6 +2635,14 @@
 									"type": ""
 								}
 							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFnUFu4XVA3WYQ=",
+							"_parent": {
+								"$ref": "AAAAAAFnLOEGq+CjLYc="
+							},
+							"name": "envoyerCard"
 						}
 					]
 				}
