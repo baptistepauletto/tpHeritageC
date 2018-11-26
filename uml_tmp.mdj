@@ -1281,13 +1281,30 @@
 											"height": 13,
 											"text": "+envoyerDernier()",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFnUE/IVvEx1eY=",
+											"_parent": {
+												"$ref": "AAAAAAFnLOEGreCss3I="
+											},
+											"model": {
+												"$ref": "AAAAAAFnUE/IPPEu9PI="
+											},
+											"font": "Arial;13;0",
+											"left": 213,
+											"top": 328,
+											"width": 249.51904296875,
+											"height": 13,
+											"text": "+envoyerNiemeTrajet(int i)",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 208,
 									"top": 278,
 									"width": 259.51904296875,
-									"height": 53
+									"height": 68
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1327,7 +1344,7 @@
 							"left": 208,
 							"top": 200,
 							"width": 259.51904296875,
-							"height": 131,
+							"height": 146,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnLOEGrOCmU1g="
 							},
@@ -2031,7 +2048,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 321,
-									"top": 349,
+									"top": 364,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -2051,7 +2068,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 307,
-									"top": 352,
+									"top": 367,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -2071,7 +2088,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 348,
-									"top": 345,
+									"top": 360,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -2115,7 +2132,7 @@
 							"tail": {
 								"$ref": "AAAAAAFnLFFsp/vKZaA="
 							},
-							"points": "528:584;336:584;336:330",
+							"points": "528:584;336:584;336:345",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnLPTcm+bfpcw="
@@ -2582,6 +2599,25 @@
 								"$ref": "AAAAAAFnLOEGq+CjLYc="
 							},
 							"name": "envoyerDernier"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFnUE/IPPEu9PI=",
+							"_parent": {
+								"$ref": "AAAAAAFnLOEGq+CjLYc="
+							},
+							"name": "envoyerNiemeTrajet",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFnUFBHmPFiXLE=",
+									"_parent": {
+										"$ref": "AAAAAAFnUE/IPPEu9PI="
+									},
+									"name": "int i",
+									"type": ""
+								}
+							]
 						}
 					]
 				}
