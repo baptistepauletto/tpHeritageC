@@ -33,8 +33,10 @@ void Catalogue::Afficher() const
   const int nbTrajets = trajetsDisponibles.EnvoyerCard();
   for (int i(0) ; i < nbTrajets; i++)
   {
+    cout << i+1 << "  : ";
     Trajet iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
-    cout << iemeTrajet.Afficher() << '\n';
+    iemeTrajet.Afficher();
+    cout << '\n';
   }
 }
 
@@ -43,9 +45,20 @@ void Catalogue::AjouterTrajet(const Trajet & t)
   trajetsDisponibles.Ajouter(t);
 }
 
-void Catalogue::rechercherParcoursSimple(const std::string & vDep,
-      const std::string & vFin) const{
-
+void Catalogue::rechercherParcoursSimple(const std::string & vDep, const std::string & vFin) const
+{
+    cout << "Version simple :" << endl;
+    const int nbTrajets = trajetsDisponibles.EnvoyerCard();
+    for (int i(0) ; i < nbTrajets; i++)
+    {
+      Trajet iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
+      if (iemeTrajet.EnvoyerVilleDepart().compare(vDep) == 0 && iemeTrajet.EnvoyerVilleArrive().compare(vFin) == 0)
+      {
+        cout << i+1 << "  : ";
+        iemeTrajet.Afficher();
+        cout << '\n';
+      }
+    }
 }
 
 

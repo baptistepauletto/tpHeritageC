@@ -53,6 +53,8 @@ public:
     // Contrat : vDep (et vFin) appartiennent à l'ensemble des villes
     // de départ (et fin, respectivement) dans le catalogue.
 
+  //  void rechercherParcoursAvancee(const std::string & vDep,const std::string & vFin) const;
+
 //-------------------------------------------- Constructeurs - destructeur
     //Catalogue ( const std::string & Catalogue );
     // Mode d'emploi (constructeur de copie) :
