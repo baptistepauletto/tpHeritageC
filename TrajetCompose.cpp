@@ -50,7 +50,11 @@ void TrajetCompose::Afficher ( void ) const
   for (int i(0) ; i < nbTrajets; i++)
   {
     Trajet iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
-    cout << iemeTrajet.Afficher() << " - ";
+    iemeTrajet.Afficher()
+    if(i != nbTrajets-1)
+    {
+      cout << " - ";
+    }
   }
 } //----- Fin de Méthode
 
