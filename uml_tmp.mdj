@@ -416,13 +416,47 @@
 											"height": 13,
 											"text": "+afficher()",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFnUGph4VDi53g=",
+											"_parent": {
+												"$ref": "AAAAAAFnLFCO5vttI/g="
+											},
+											"model": {
+												"$ref": "AAAAAAFnUGph0FDfLyY="
+											},
+											"font": "Arial;13;0",
+											"left": 661,
+											"top": 435,
+											"width": 159,
+											"height": 13,
+											"text": "+envoyerVilleDepart()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFnUGqWulFDTP4=",
+											"_parent": {
+												"$ref": "AAAAAAFnLFCO5vttI/g="
+											},
+											"model": {
+												"$ref": "AAAAAAFnUGqWsFFANMM="
+											},
+											"font": "Arial;13;0",
+											"left": 661,
+											"top": 450,
+											"width": 159,
+											"height": 13,
+											"text": "+envoyerVilleArrivee()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 656,
 									"top": 415,
 									"width": 169,
-									"height": 23
+									"height": 53
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1250,40 +1284,6 @@
 										},
 										{
 											"_type": "UMLOperationView",
-											"_id": "AAAAAAFnLOMuj+I0yOE=",
-											"_parent": {
-												"$ref": "AAAAAAFnLOEGreCss3I="
-											},
-											"model": {
-												"$ref": "AAAAAAFnLOMuUeIrQUI="
-											},
-											"font": "Arial;13;0",
-											"left": 213,
-											"top": 298,
-											"width": 249.51904296875,
-											"height": 13,
-											"text": "+envoyerPremier()",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAFnLObw9eO30ME=",
-											"_parent": {
-												"$ref": "AAAAAAFnLOEGreCss3I="
-											},
-											"model": {
-												"$ref": "AAAAAAFnLObwvOOu6j4="
-											},
-											"font": "Arial;13;0",
-											"left": 213,
-											"top": 313,
-											"width": 249.51904296875,
-											"height": 13,
-											"text": "+envoyerDernier()",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
 											"_id": "AAAAAAFnUE/IVvEx1eY=",
 											"_parent": {
 												"$ref": "AAAAAAFnLOEGreCss3I="
@@ -1293,7 +1293,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 213,
-											"top": 328,
+											"top": 298,
 											"width": 249.51904296875,
 											"height": 13,
 											"text": "+envoyerNiemeTrajet(int i)",
@@ -1310,7 +1310,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 213,
-											"top": 343,
+											"top": 313,
 											"width": 249.51904296875,
 											"height": 13,
 											"text": "+envoyerCard()",
@@ -1321,7 +1321,7 @@
 									"left": 208,
 									"top": 278,
 									"width": 259.51904296875,
-									"height": 83
+									"height": 53
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -2420,6 +2420,22 @@
 								"$ref": "AAAAAAFnLFCO5ftkBCE="
 							},
 							"name": "afficher"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFnUGph0FDfLyY=",
+							"_parent": {
+								"$ref": "AAAAAAFnLFCO5ftkBCE="
+							},
+							"name": "envoyerVilleDepart"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFnUGqWsFFANMM=",
+							"_parent": {
+								"$ref": "AAAAAAFnLFCO5ftkBCE="
+							},
+							"name": "envoyerVilleArrivee"
 						}
 					],
 					"isAbstract": true
@@ -2600,22 +2616,6 @@
 									"type": ""
 								}
 							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFnLOMuUeIrQUI=",
-							"_parent": {
-								"$ref": "AAAAAAFnLOEGq+CjLYc="
-							},
-							"name": "envoyerPremier"
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFnLObwvOOu6j4=",
-							"_parent": {
-								"$ref": "AAAAAAFnLOEGq+CjLYc="
-							},
-							"name": "envoyerDernier"
 						},
 						{
 							"_type": "UMLOperation",
