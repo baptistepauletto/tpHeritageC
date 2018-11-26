@@ -61,13 +61,13 @@ public:
 
     Catalogue ( );
     // Mode d'emploi :
-    //
+    // Constructeur de catalogue, ne prend pas de paramètres en entrée.
     // Contrat :
-    //
+    // 
 
     virtual ~Catalogue ( );
     // Mode d'emploi :
-    //
+    // Destructeur de catalogue.
     // Contrat :
     //
 
