@@ -23,7 +23,7 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-void CollectionTrajet::Ajouter (const Trajet tAjouter )
+void CollectionTrajet::Ajouter (const Trajet & tAjouter )
 // Algorithme : Verification de l'absence d'un trajet identique via
 // les méthodes disponibles dans les classes enfants de Trajet
 // à l'intérieur de l'ensemble des trajets puis ajout de ce dernier.
@@ -31,9 +31,9 @@ void CollectionTrajet::Ajouter (const Trajet tAjouter )
 {
 	for(unsigned i(0); i < cardActuelle; i++ )
 	{
-		if (strcmp(tAjouter.EnvoyerVilleDepart(),trajets[i].EnvoyerVilleDepart()) == 0
-		&& strcmp(tAjouter.EnvoyerVilleArrivee(),trajets[i].EnvoyerVilleArrivee()) == 0
-		&& strcmp(tAjouter.EnvoyerMoyenDeTransport(),trajets[i].EnvoyerMoyenDeTransport()) == 0)
+		if (strcmp(tAjouter.EnvoyerVilleDepart(),trajets[i]->EnvoyerVilleDepart()) == 0
+		&& strcmp(tAjouter.EnvoyerVilleArrivee(),trajets[i]->EnvoyerVilleArrivee()) == 0
+		&& strcmp(tAjouter.EnvoyerMoyenDeTransport(),trajets[i]->EnvoyerMoyenDeTransport()) == 0)
 		{
 			return;
 		}
@@ -42,7 +42,7 @@ void CollectionTrajet::Ajouter (const Trajet tAjouter )
 	if (cardActuelle == cardMax){
 		return; // C'est plein !
 	}
-	trajets[cardActuelle] = tAjouter;
+	*trajets[cardActuelle] = tAjouter;
 	cardActuelle++;
 } //----- Fin de Ajouter
 
@@ -56,7 +56,7 @@ Trajet & CollectionTrajet::EnvoyerNiemeTrajet(const unsigned numTrajet) const
 // Algorithme : Renvoie simplement par référence le trajet numéro i
 // après vérification de la valeur;
 {
-		return trajets[numTrajet];
+		return * trajets[numTrajet];
 }
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -80,11 +80,11 @@ Trajet & CollectionTrajet::EnvoyerNiemeTrajet(const unsigned numTrajet) const
 
 CollectionTrajet::CollectionTrajet (unsigned cardinaliteMaximale)
 : 	cardMax (cardinaliteMaximale),
-	cardActuelle (0),
+	cardActuelle (0)
 // Algorithme :
 //
 {
-	trajets = new Trajet *[cardMax];
+	trajets = new Trajet * [cardMax];
 #ifdef MAP
     cout << "Appel au constructeur de <CollectionTrajet>" << endl;
 #endif

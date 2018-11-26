@@ -28,7 +28,7 @@ class CollectionTrajet
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void Ajouter (const Trajet tAjouter);
+    void Ajouter (const Trajet & tAjouter);
     // Mode d'emploi : Passage en paramètre d'un trajet, qui sera ajouté
     // à tous les trajets actuellement stockés dans la collection, s'il
     // ne s'agit pas d'un doublon bien entendu.
@@ -83,8 +83,8 @@ protected:
 
 //----------------------------------------------------- Attributs protégés
     Trajet * * trajets ;
-    unsigned cardActuelle;
     unsigned cardMax;
+    unsigned cardActuelle;
 };
 
 //-------------------------------- Autres définitions dépendantes de <CollectionTrajet>
