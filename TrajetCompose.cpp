@@ -24,19 +24,19 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-string TrajetCompose::EnvoyerVilleDepart() const
+char * TrajetCompose::EnvoyerVilleDepart() const
 {
   //on récupère le premier trajet de la collection et on affiche son départ
   Trajet premierTrajet = trajetsComposants.EnvoyerNiemeTrajet(0);
 	return premierTrajet.EnvoyerVilleDepart();
 }
 
-string TrajetCompose::EnvoyerVilleArrive() const
+char * TrajetCompose::EnvoyerVilleArrivee() const
 {
   //on récupère le dernier trajet de la collection et on affiche son arrivée
   const int nbTrajets = trajetsComposants.EnvoyerCard();
   Trajet dernierTrajet = trajetsComposants.EnvoyerNiemeTrajet(nbTrajets);
-  return dernierTrajet.EnvoyerVilleArrive();
+  return dernierTrajet.EnvoyerVilleArrivee();
 }
 
 
@@ -46,11 +46,11 @@ void TrajetCompose::Afficher ( void ) const
 // Algorithme :
 //
 {
-  const int nbTrajets = trajetsDisponibles.EnvoyerCard();
+  const int nbTrajets = trajetsComposants.EnvoyerCard();
   for (int i(0) ; i < nbTrajets; i++)
   {
-    Trajet iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
-    iemeTrajet.Afficher()
+    Trajet iemeTrajet = trajetsComposants.EnvoyerNiemeTrajet(i);
+    iemeTrajet.Afficher();
     if(i != nbTrajets-1)
     {
       cout << " - ";
@@ -68,24 +68,9 @@ void TrajetCompose::Afficher ( void ) const
 
 
 //-------------------------------------------- Constructeurs - destructeur
-TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose ) :
-  trajetsComposant(unTrajetCompose.trajetsComposant),
-  villeDepart(unTrajetCompose.villeDepart),
-  villeFin(unTrajetCompose.villeFin)
-// Algorithme :
-//
-{
-
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <TrajetCompose>" << endl;
-#endif
-} //----- Fin de TrajetCompose (constructeur de copie)
-
-
 TrajetCompose::TrajetCompose ( CollectionTrajet collection ) :
-  trajetsComposant(collection),
-  villeDepart(trajetsComposant.EnvoyerPremier()),
-  villeFin(trajetsComposant.EnvoyerDernier())
+  trajetsComposants(collection),
+  Trajet(EnvoyerVilleDepart(),EnvoyerVilleArrivee())
 // Algorithme :
 //
 {

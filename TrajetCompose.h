@@ -12,6 +12,7 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include "Trajet.h"
+#include "CollectionTrajet.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -34,11 +35,15 @@ class TrajetCompose : public Trajet
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste des paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+  virtual void Afficher () const;
+  // Mode d'emploi :
+  //
+  // Contrat :
+  //
+
+  virtual char * EnvoyerVilleDepart() const;
+  virtual char * EnvoyerVilleArrivee() const;
+  virtual char * EnvoyerMoyenDeTransport() const;
 
 
 

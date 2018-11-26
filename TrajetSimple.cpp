@@ -21,11 +21,11 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-string TrajetSimple::EnvoyerVilleDepart() const
+char * TrajetSimple::EnvoyerVilleDepart() const
 {
 	return villeDepart;
 }
-string TrajetSimple::EnvoyerVilleArrive() const
+char * TrajetSimple::EnvoyerVilleArrivee() const
 {
 	return villeArrivee;
 }
@@ -36,20 +36,21 @@ void TrajetSimple::Afficher(void) const
 // Algorithme :
 //
 {
-	cout << "De " << villeDepart << " à " << villeArrivee << " en " << MoyenDeTransport;
+	cout << "De " << villeDepart << " à " << villeArrivee << " en " <<
+	moyenDeTransport;
 }//----- Fin de Afficher
 
 //-------------------------------------------- Constructeurs - destructeur
-TrajetSimple::TrajetSimple ( string vDepart, string vArrivee, eMoyenDeTransport mTransport)
+TrajetSimple::TrajetSimple ( char * vDepart, char * vArrivee, eMoyenDeTransport mTransport)
+: 	Trajet(vDepart, vArrivee),
+	moyenDeTransport(mTransport)
 // Algorithme :
 //
 {
 #ifdef MAP
     cout << "Appel au constructeur de copie de <TrajetSimple>" << endl;
 #endif
-	villeDepart = vDepart;
-	villeArrivee = vArrivee;
-	moyenDeTransport = mTransport;
+
 } //----- Fin de TrajetSimple (constructeur de copie)
 
 

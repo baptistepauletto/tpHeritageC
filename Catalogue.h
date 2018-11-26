@@ -45,8 +45,8 @@ public:
     // Contrat : Le trajet doit exister, bien entendu.
     //
 
-    void rechercherParcoursSimple(const std::string & vDep,
-			    const std::string & vFin) const;
+    void rechercherParcoursSimple(const char * & vDep,
+			    const char * & vFin) const;
     // Mode d'emploi : Nous récupérons dans la collection de trajets,
     // ceux qui possèdent une ville de départ ET une ville d'arrivée
     // égales aux paramètres, nous les affichons alors.

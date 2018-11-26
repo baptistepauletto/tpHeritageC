@@ -16,6 +16,8 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Catalogue.h"
+#include "CollectionTrajet.h"
+#include <cstring>
 
 //------------------------------------------------------------- Constantes
 
@@ -45,14 +47,14 @@ void Catalogue::AjouterTrajet(const Trajet & t)
   trajetsDisponibles.Ajouter(t);
 }
 
-void Catalogue::rechercherParcoursSimple(const std::string & vDep, const std::string & vFin) const
+void Catalogue::rechercherParcoursSimple(const char * & vDep, const char * & vFin) const
 {
     cout << "Version simple :" << endl;
     const int nbTrajets = trajetsDisponibles.EnvoyerCard();
     for (int i(0) ; i < nbTrajets; i++)
     {
       Trajet iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
-      if (iemeTrajet.EnvoyerVilleDepart().compare(vDep) == 0 && iemeTrajet.EnvoyerVilleArrive().compare(vFin) == 0)
+      if (strcmp(iemeTrajet.EnvoyerVilleDepart(),vDep) == 0 && strcmp(iemeTrajet.EnvoyerVilleArrivee(),vFin) == 0)
       {
         cout << i+1 << "  : ";
         iemeTrajet.Afficher();
@@ -65,14 +67,13 @@ void Catalogue::rechercherParcoursSimple(const std::string & vDep, const std::st
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Catalogue::Catalogue ( )
+Catalogue::Catalogue ( ) : trajetsDisponibles()
 // Algorithme :
 //
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Catalogue>" << endl;
 #endif
-  trajetsDisponibles();
 
 } //----- Fin de Catalogue
 

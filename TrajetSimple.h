@@ -11,7 +11,7 @@
 #define TRAJETSIMPLE_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include Trajet.h
+#include "Trajet.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -28,15 +28,24 @@ class TrajetSimple : public Trajet
 
 public:
 //----------------------------------------------------- Méthodes publiques
-  
+  virtual void Afficher () const;
+  // Mode d'emploi :
+  //
+  // Contrat :
+  //
+
+
+  virtual char * EnvoyerVilleDepart() const;
+  virtual char * EnvoyerVilleArrivee() const;
+  virtual char * EnvoyerMoyenDeTransport() const;
 
 //------------------------------------------------- Surcharge d'opérateurs
-   
+
 
 //-------------------------------------------- Constructeurs - destructeur
-    TrajetSimple ( string villeDepart, string villeArrivee, eMoyenDeTransport moyenDeTransport );
+    TrajetSimple ( char * villeDepart, char * villeArrivee, eMoyenDeTransport moyenDeTransport );
     // Mode d'emploi (constructeur de copie) :
-    // 
+    //
     // Contrat :
     // moyenDeTransport doit être un des élements suivants : {Train, Auto, Bateau, Avion, Velo}
 
@@ -58,4 +67,3 @@ protected:
 //-------------------------------- Autres définitions dépendantes de <TrajetSimple>
 
 #endif // TRAJETSIMPLE_H
-

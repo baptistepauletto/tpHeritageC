@@ -35,14 +35,15 @@ public:
     //
 
     virtual char * EnvoyerVilleDepart() const;
-    virtual char * EnvoyerVilleArrive() const;
+    virtual char * EnvoyerVilleArrivee() const;
     virtual char * EnvoyerMoyenDeTransport() const;
 
 //------------------------------------------------------------------ PRIVE
 
 protected:
 //----------------------------------------------------- Méthodes protégées
-
+  Trajet(char * vDep, char * vArr) : villeDepart(vDep), villeArrivee(vArr)
+  {}
 //----------------------------------------------------- Attributs protégés
    char * villeDepart;
    char * villeArrivee;

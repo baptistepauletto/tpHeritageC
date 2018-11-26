@@ -18,11 +18,11 @@
 
 //------------------------------------------------------------------------
 // Rôle de la classe <CollectionTrajet>
-// 
+//
 //
 //------------------------------------------------------------------------
 
-class CollectionTrajet 
+class CollectionTrajet
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -44,10 +44,10 @@ public:
 
 
     unsigned EnvoyerCard() const ;
-    // Mode d'emploi : Simplement, la cardinalité de la structure de 
+    // Mode d'emploi : Simplement, la cardinalité de la structure de
     // données sera renvoyée.
     // Contrat : La cardinalité n'en est pas pour autant modifiée.
-    // 
+    //
 
 //------------------------------------------------- Surcharge d'opérateurs
     //Xxx & operator = ( const Xxx & unXxx );
@@ -64,7 +64,7 @@ public:
     // Contrat :
     //
 
-    CollectionTrajet (cardinaliteMaximale = 100);
+    CollectionTrajet (unsigned cardinaliteMaximale = 100);
     // Mode d'emploi : Construit une structure de données de cardinalité
     // maximale 100 et initialise sa cardinalité actuelle à 0.
     // Contrat : L'objet créé est stable.
@@ -82,7 +82,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-    Trajet * trajets ;
+    Trajet * * trajets ;
     unsigned cardActuelle;
     unsigned cardMax;
 };
@@ -90,4 +90,3 @@ protected:
 //-------------------------------- Autres définitions dépendantes de <CollectionTrajet>
 
 #endif // COLLECTIONTRAJET_H
-
