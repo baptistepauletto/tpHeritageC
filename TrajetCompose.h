@@ -75,7 +75,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-  CollectionTrajet trajetsComposants;
+  Catalogue trajetsComposants;
 };
 
 //-------------------------------- Autres définitions dépendantes de <TrajetCompose>

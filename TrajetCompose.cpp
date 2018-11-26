@@ -23,7 +23,7 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-void TrajetCompose::Affiche ( void )
+void TrajetCompose::Afficher ( void )
 // Algorithme :
 //
 {
