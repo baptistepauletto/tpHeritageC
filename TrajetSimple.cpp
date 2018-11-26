@@ -21,11 +21,22 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
+string TrajetSimple::EnvoyerVilleDepart()
+{
+	return villeDepart;
+}
+string TrajetSimple::EnvoyerVilleArrive()
+{
+	return villeArrivee;
+}
+
+
+
 void TrajetSimple::Afficher(void)
 // Algorithme :
 //
 {
-	cout << "de" << villeDepart << "à" << villeArrivee << "en" << MoyenDeTransport << endl;
+	cout << "De " << villeDepart << " à " << villeArrivee << " en " << MoyenDeTransport;
 }//----- Fin de Afficher
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -55,4 +66,3 @@ TrajetSimple::~TrajetSimple ( )
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
-
