@@ -11,7 +11,8 @@
 #define CATALOGUE_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+#include "Trajet.h"
+#include "CollectionTrajet.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -32,20 +33,20 @@ class Catalogue
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void Afficher() const
-    // Mode d'emploi : Nous affichons de manière ordonée le contenu du 
-    // catalogue à l'instant T, où la fonction est appellée 
+    void Afficher() const;
+    // Mode d'emploi : Nous affichons de manière ordonée le contenu du
+    // catalogue à l'instant T, où la fonction est appellée
     // Contrat : Elle ne modifiera pas le contenu de l'instance catalogue
 
-    void AjouterTrajet(const Trajet & t) 
+    void AjouterTrajet(const Trajet & t);
     // Mode d'emploi : Le trajet passé en paramètre, s'il est différent
     // de ceux déjà présents, sera ajouté au catalogue via un placement
     // au premier index libre via la méthode Ajouter de CollectionTrajet.
     // Contrat : Le trajet doit exister, bien entendu.
     //
 
-    void rechercherParcours(const std::string & vDep,
-			    const std::string & vFin) const
+    void rechercherParcoursSimple(const std::string & vDep,
+			    const std::string & vFin) const;
     // Mode d'emploi : Nous récupérons dans la collection de trajets,
     // ceux qui possèdent une ville de départ ET une ville d'arrivée
     // égales aux paramètres, nous les affichons alors.
@@ -63,7 +64,7 @@ public:
     // Mode d'emploi :
     // Constructeur de catalogue, ne prend pas de paramètres en entrée.
     // Contrat :
-    // 
+    //
 
     virtual ~Catalogue ( );
     // Mode d'emploi :
@@ -77,10 +78,9 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-	CollectionTrajet trajetsDisponibles; 
+	CollectionTrajet trajetsDisponibles;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Catalogue>
 
 #endif // CATALOGUE_H
-

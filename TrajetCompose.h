@@ -51,12 +51,6 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    TrajetCompose ( const TrajetCompose & unTrajetCompose );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
     TrajetCompose (CollectionTrajet collection);
     // Mode d'emploi :
     //
@@ -75,7 +69,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-  Catalogue trajetsComposants;
+  CollectionTrajet trajetsComposants;
 };
 
 //-------------------------------- Autres définitions dépendantes de <TrajetCompose>

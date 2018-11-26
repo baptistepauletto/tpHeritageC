@@ -23,11 +23,35 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-void TrajetCompose::Afficher ( void )
+
+string TrajetCompose::EnvoyerVilleDepart() const
+{
+  //on récupère le premier trajet de la collection et on affiche son départ
+  Trajet premierTrajet = trajetsComposants.EnvoyerNiemeTrajet(0);
+	return premierTrajet.EnvoyerVilleDepart();
+}
+
+string TrajetCompose::EnvoyerVilleArrive() const
+{
+  //on récupère le dernier trajet de la collection et on affiche son arrivée
+  const int nbTrajets = trajetsComposants.EnvoyerCard();
+  Trajet dernierTrajet = trajetsComposants.EnvoyerNiemeTrajet(nbTrajets);
+  return dernierTrajet.EnvoyerVilleArrive();
+}
+
+
+
+
+void TrajetCompose::Afficher ( void ) const
 // Algorithme :
 //
 {
-  trajetsComposant.Afficher();
+  const int nbTrajets = trajetsDisponibles.EnvoyerCard();
+  for (int i(0) ; i < nbTrajets; i++)
+  {
+    Trajet iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
+    cout << iemeTrajet.Afficher() << " - ";
+  }
 } //----- Fin de Méthode
 
 
@@ -56,8 +80,8 @@ TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose ) :
 
 TrajetCompose::TrajetCompose ( CollectionTrajet collection ) :
   trajetsComposant(collection),
-  villeDepart(trajetsComposant.premier().villeDepart),
-  villeFin(trajetsComposant.dernier().villeFin)
+  villeDepart(trajetsComposant.EnvoyerPremier()),
+  villeFin(trajetsComposant.EnvoyerDernier())
 // Algorithme :
 //
 {

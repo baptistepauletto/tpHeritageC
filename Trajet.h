@@ -22,17 +22,21 @@
 //
 //------------------------------------------------------------------------
 
-virtual class Trajet 
+virtual class Trajet
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    virtual void Afficher ();
+    virtual void Afficher () const;
     // Mode d'emploi :
     //
     // Contrat :
     //
+
+    virtual std::string EnvoyerVilleDepart() const;
+    virtual std::string EnvoyerVilleArrive() const;
+
 
 //------------------------------------------------------------------ PRIVE
 
@@ -40,7 +44,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-   string villeDepart; 
+   string villeDepart;
    string villeArrivee;
 
 };
@@ -48,4 +52,3 @@ protected:
 //-------------------------------- Autres définitions dépendantes de <Trajet>
 
 #endif // TRAJET_H
-

@@ -3,9 +3,9 @@ RM= rm
 COMP= g++
 EDL= g++
 CPPFLAGS= -ansi -pedantic -Wall -std=c++11 -D MAP
-EDLFLAGS= 
+EDLFLAGS=
 RMFLAGS= -f
-INT= Catalogue.h TrajetSimple.h TrajetCompose.h
+INT= Catalogue.h TrajetSimple.h TrajetCompose.h CollectionTrajet.h
 REAL= $(INT:.h=.cpp)
 OBJ= $(REAL:.cpp=.o)
 LIBS=
@@ -20,7 +20,7 @@ EMAIL= baptiste.pauletto@insa-lyon.fr felix.fonteneau@insa-lyon.fr fabien.gelus@
 
 .PHONY: $(EFFACE)
 
-$(EXE) : $(OBJ) 
+$(EXE) : $(OBJ)
 	$(ECHO) "Edition de liens de <$(EXE)>"
 	$(EDL) -o $(EXE) $(OBJ) $(LIBS)
 
@@ -32,7 +32,7 @@ Catalogue.o : Trajet.h
 
 TrajetSimple.o : Trajet.h
 
-TrajetCompose.o : Trajet.h 
+TrajetCompose.o : Trajet.h
 
 $(EFFACE) :
 	$(ECHO) "Suppression des fichiers"
