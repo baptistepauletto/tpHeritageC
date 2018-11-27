@@ -12,7 +12,7 @@ LIBS=
 INCPATH=
 LIBPATH=
 EFFACE= clean
-EXE= Ensemble
+EXE= Catalogue
 DATE= 19.11
 AUTHOR= Baptiste & Felix & Fabien
 YEAR= 2018
@@ -28,11 +28,14 @@ $(EXE) : $(OBJ)
 	$(ECHO) "Compilation de <$(<)>"
 	$(COMP) $(CPPFLAGS) $(INCPATH) -c $<
 
-Catalogue.o : Trajet.h
+Catalogue.o : Trajet.h CollectionTrajet.h
+
+TrajetCompose.o : Trajet.h CollectionTrajet.h
+
+CollectionTrajet.o : Trajet.h
 
 TrajetSimple.o : Trajet.h
 
-TrajetCompose.o : Trajet.h
 
 $(EFFACE) :
 	$(ECHO) "Suppression des fichiers"
