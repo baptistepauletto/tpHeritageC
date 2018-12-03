@@ -28,6 +28,8 @@ $(EXE) : $(OBJ)
 	$(ECHO) "Compilation de <$(<)>"
 	$(COMP) $(CPPFLAGS) $(INCPATH) -c $<
 
+Catalogue.o : Trajet.h CollectionTrajet.h
+
 TrajetSimple.o : Trajet.h
 
 TrajetCompose.o : Trajet.h CollectionTrajet.h
