@@ -30,6 +30,10 @@ char * TrajetSimple::EnvoyerVilleArrivee() const
 	return villeArrivee;
 }
 
+eMoyenDeTransport TrajetSimple::EnvoyerMoyenDeTransport() const
+{
+	return moyenDeTransport;
+}
 
 
 void TrajetSimple::Afficher(void) const

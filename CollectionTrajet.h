@@ -35,7 +35,7 @@ public:
     // Contrat : Le trajet t ne sera pas modifié.
     //
 
-    Trajet & EnvoyerNiemeTrajet(const unsigned numTrajet) const ;
+    const Trajet & EnvoyerNiemeTrajet(const unsigned numTrajet) const ;
     // Mode d'emploi : Le trajet placé à la position i sera retourné
     // à l'appelant de cette méthode. Le trajet ainsi que la structure
     // de données contenant les trajets ne sera pas modifiée.

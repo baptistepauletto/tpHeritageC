@@ -32,8 +32,7 @@ void CollectionTrajet::Ajouter (const Trajet & tAjouter )
 	for(unsigned i(0); i < cardActuelle; i++ )
 	{
 		if (strcmp(tAjouter.EnvoyerVilleDepart(),trajets[i]->EnvoyerVilleDepart()) == 0
-		&& strcmp(tAjouter.EnvoyerVilleArrivee(),trajets[i]->EnvoyerVilleArrivee()) == 0
-		&& strcmp(tAjouter.EnvoyerMoyenDeTransport(),trajets[i]->EnvoyerMoyenDeTransport()) == 0)
+		&& strcmp(tAjouter.EnvoyerVilleArrivee(),trajets[i]->EnvoyerVilleArrivee()) == 0)
 		{
 			return;
 		}
@@ -52,7 +51,7 @@ unsigned CollectionTrajet::EnvoyerCard () const
 	return cardActuelle;
 } //----- Fin de EnvoyerCard
 
-Trajet & CollectionTrajet::EnvoyerNiemeTrajet(const unsigned numTrajet) const
+const Trajet & CollectionTrajet::EnvoyerNiemeTrajet(const unsigned numTrajet) const
 // Algorithme : Renvoie simplement par référence le trajet numéro i
 // après vérification de la valeur;
 {
@@ -79,7 +78,8 @@ Trajet & CollectionTrajet::EnvoyerNiemeTrajet(const unsigned numTrajet) const
 
 
 CollectionTrajet::CollectionTrajet (unsigned cardinaliteMaximale)
-: 	cardMax (cardinaliteMaximale),
+: 	trajets (nullptr),
+	cardMax (cardinaliteMaximale),
 	cardActuelle (0)
 // Algorithme :
 //

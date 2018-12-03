@@ -28,15 +28,9 @@ class Trajet
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    virtual void Afficher () const;
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    virtual char * EnvoyerVilleDepart() const;
-    virtual char * EnvoyerVilleArrivee() const;
-    virtual char * EnvoyerMoyenDeTransport() const;
+    virtual void Afficher () const = 0;
+    virtual char * EnvoyerVilleDepart() const = 0;
+    virtual char * EnvoyerVilleArrivee() const = 0;
 
 //------------------------------------------------------------------ PRIVE
 

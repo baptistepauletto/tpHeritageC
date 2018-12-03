@@ -16,6 +16,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Catalogue.h"
+#include "Trajet.h"
 #include <cstring>
 
 //------------------------------------------------------------- Constantes
@@ -35,7 +36,7 @@ void Catalogue::Afficher() const
   for (int i(0) ; i < nbTrajets; i++)
   {
     cout << i+1 << "  : ";
-    Trajet iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
+    const Trajet& iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
     iemeTrajet.Afficher();
     cout << '\n';
   }
@@ -52,7 +53,7 @@ void Catalogue::rechercherParcoursSimple(const char * & vDep, const char * & vFi
     const int nbTrajets = trajetsDisponibles.EnvoyerCard();
     for (int i(0) ; i < nbTrajets; i++)
     {
-      Trajet iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
+      const Trajet& iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
       if (strcmp(iemeTrajet.EnvoyerVilleDepart(),vDep) == 0 && strcmp(iemeTrajet.EnvoyerVilleArrivee(),vFin) == 0)
       {
         cout << i+1 << "  : ";

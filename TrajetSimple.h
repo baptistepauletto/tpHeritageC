@@ -29,15 +29,9 @@ class TrajetSimple : public Trajet
 public:
 //----------------------------------------------------- Méthodes publiques
   virtual void Afficher () const;
-  // Mode d'emploi :
-  //
-  // Contrat :
-  //
-
-
   virtual char * EnvoyerVilleDepart() const;
   virtual char * EnvoyerVilleArrivee() const;
-  virtual char * EnvoyerMoyenDeTransport() const;
+  eMoyenDeTransport EnvoyerMoyenDeTransport() const;
 
 //------------------------------------------------- Surcharge d'opérateurs
 

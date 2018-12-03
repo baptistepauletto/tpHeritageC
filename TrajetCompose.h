@@ -43,7 +43,6 @@ public:
 
   virtual char * EnvoyerVilleDepart() const;
   virtual char * EnvoyerVilleArrivee() const;
-  virtual char * EnvoyerMoyenDeTransport() const;
 
 
 
