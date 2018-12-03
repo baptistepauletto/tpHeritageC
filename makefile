@@ -12,7 +12,7 @@ LIBS=
 INCPATH=
 LIBPATH=
 EFFACE= clean
-EXE= Main
+EXE= executable
 DATE= 19.11
 AUTHOR= Baptiste & Felix 
 YEAR= 2018
@@ -39,3 +39,4 @@ CollectionTrajet.o : Trajet.h
 $(EFFACE) :
 	$(ECHO) "Suppression des fichiers"
 	$(RM) $(RMFLAGS) $(OBJ) $(EXE) core
+
