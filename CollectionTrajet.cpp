@@ -23,25 +23,25 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-void CollectionTrajet::Ajouter (const Trajet & tAjouter )
+void CollectionTrajet::Ajouter (const Trajet & tAjouter)
 // Algorithme : Verification de l'absence d'un trajet identique via
 // les méthodes disponibles dans les classes enfants de Trajet
 // à l'intérieur de l'ensemble des trajets puis ajout de ce dernier.
 //
 {
-	for(unsigned i(0); i < cardActuelle; i++ )
-	{
-		if (strcmp(tAjouter.EnvoyerVilleDepart(),trajets[i]->EnvoyerVilleDepart()) == 0
-		&& strcmp(tAjouter.EnvoyerVilleArrivee(),trajets[i]->EnvoyerVilleArrivee()) == 0)
-		{
-			return;
-		}
-	}
+	// for(unsigned i(0); i < cardActuelle; i++ )
+	// {
+	// 	if (strcmp(tAjouter.EnvoyerVilleDepart(),trajets[i]->EnvoyerVilleDepart()) == 0
+	// 	&& strcmp(tAjouter.EnvoyerVilleArrivee(),trajets[i]->EnvoyerVilleArrivee()) == 0)
+	// 	{
+	// 		return; //déjà présent !
+	// 	}
+	// }
 
 	if (cardActuelle == cardMax){
 		return; // C'est plein !
 	}
-	*trajets[cardActuelle] = tAjouter;
+	trajets[cardActuelle] = &tAjouter;
 	cardActuelle++;
 } //----- Fin de Ajouter
 
@@ -55,7 +55,7 @@ const Trajet & CollectionTrajet::EnvoyerNiemeTrajet(const unsigned numTrajet) co
 // Algorithme : Renvoie simplement par référence le trajet numéro i
 // après vérification de la valeur;
 {
-		return * trajets[numTrajet];
+		return  *trajets[numTrajet];
 }
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -77,14 +77,15 @@ const Trajet & CollectionTrajet::EnvoyerNiemeTrajet(const unsigned numTrajet) co
 //} //----- Fin de CollectionTrajet (constructeur de copie)
 
 
-CollectionTrajet::CollectionTrajet (unsigned cardinaliteMaximale)
+CollectionTrajet::CollectionTrajet (Trajet & trajet, unsigned cardinaliteMaximale)
 : 	trajets (nullptr),
 	cardMax (cardinaliteMaximale),
-	cardActuelle (0)
+	cardActuelle (1)
 // Algorithme :
 //
 {
-	trajets = new Trajet * [cardMax];
+	trajets = new const Trajet * [cardMax];
+	trajets[0] = &trajet;
 #ifdef MAP
     cout << "Appel au constructeur de <CollectionTrajet>" << endl;
 #endif
@@ -95,6 +96,7 @@ CollectionTrajet::~CollectionTrajet ( )
 // Algorithme :
 //
 {
+	delete [] trajets;
 #ifdef MAP
     cout << "Appel au destructeur de <CollectionTrajet>" << endl;
 #endif

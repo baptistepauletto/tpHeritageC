@@ -52,7 +52,7 @@ TrajetSimple::TrajetSimple ( char * vDepart, char * vArrivee, eMoyenDeTransport 
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <TrajetSimple>" << endl;
+    cout << "Appel au constructeur de <TrajetSimple>" << endl;
 #endif
 
 } //----- Fin de TrajetSimple (constructeur de copie)

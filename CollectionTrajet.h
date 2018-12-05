@@ -64,9 +64,10 @@ public:
     // Contrat :
     //
 
-    CollectionTrajet (unsigned cardinaliteMaximale = 100);
+    CollectionTrajet (Trajet & t, unsigned cardinaliteMaximale = 10);
     // Mode d'emploi : Construit une structure de données de cardinalité
-    // maximale 100 et initialise sa cardinalité actuelle à 0.
+    // maximale 10 et initialise sa cardinalité actuelle à 0.
+    //L'objet nécessite un premier trajet pour être initialisé
     // Contrat : L'objet créé est stable.
     //
 
@@ -82,7 +83,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-    Trajet * * trajets ;
+    const Trajet * * trajets ;
     unsigned cardMax;
     unsigned cardActuelle;
 };

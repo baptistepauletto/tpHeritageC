@@ -47,16 +47,17 @@ void Catalogue::AjouterTrajet(const Trajet & t)
   trajetsDisponibles.Ajouter(t);
 }
 
-void Catalogue::rechercherParcoursSimple(const char * & vDep, const char * & vFin) const
+void Catalogue::rechercherParcoursSimple(const char *  vDep, const char *  vFin) const
 {
     cout << "Version simple :" << endl;
     const int nbTrajets = trajetsDisponibles.EnvoyerCard();
+    int j = 1;
     for (int i(0) ; i < nbTrajets; i++)
     {
-      const Trajet& iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
+      const Trajet &iemeTrajet = trajetsDisponibles.EnvoyerNiemeTrajet(i);
       if (strcmp(iemeTrajet.EnvoyerVilleDepart(),vDep) == 0 && strcmp(iemeTrajet.EnvoyerVilleArrivee(),vFin) == 0)
       {
-        cout << i+1 << "  : ";
+        cout << j++ << "  : ";
         iemeTrajet.Afficher();
         cout << '\n';
       }
@@ -67,14 +68,13 @@ void Catalogue::rechercherParcoursSimple(const char * & vDep, const char * & vFi
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Catalogue::Catalogue ( ) : trajetsDisponibles()
+Catalogue::Catalogue (Trajet & t) : trajetsDisponibles(t)
 // Algorithme :
 //
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Catalogue>" << endl;
 #endif
-
 } //----- Fin de Catalogue
 
 

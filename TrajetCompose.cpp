@@ -27,16 +27,13 @@ using namespace std;
 char * TrajetCompose::EnvoyerVilleDepart() const
 {
   //on récupère le premier trajet de la collection et on affiche son départ
-  const Trajet& premierTrajet = trajetsComposants.EnvoyerNiemeTrajet(0);
-	return premierTrajet.EnvoyerVilleDepart();
+  return trajetsComposants.EnvoyerNiemeTrajet(0).EnvoyerVilleDepart();
 }
 
 char * TrajetCompose::EnvoyerVilleArrivee() const
 {
   //on récupère le dernier trajet de la collection et on affiche son arrivée
-  const int nbTrajets = trajetsComposants.EnvoyerCard();
-  const Trajet& dernierTrajet = trajetsComposants.EnvoyerNiemeTrajet(nbTrajets);
-  return dernierTrajet.EnvoyerVilleArrivee();
+  return trajetsComposants.EnvoyerNiemeTrajet(trajetsComposants.EnvoyerCard()-1).EnvoyerVilleArrivee();
 }
 
 
@@ -56,6 +53,7 @@ void TrajetCompose::Afficher ( void ) const
       cout << " - ";
     }
   }
+  cout <<endl;
 } //----- Fin de Méthode
 
 
@@ -69,7 +67,7 @@ void TrajetCompose::Afficher ( void ) const
 
 //-------------------------------------------- Constructeurs - destructeur
 TrajetCompose::TrajetCompose ( CollectionTrajet collection ) :
-  Trajet(EnvoyerVilleDepart(),EnvoyerVilleArrivee()),
+  Trajet(collection.EnvoyerNiemeTrajet(0).EnvoyerVilleDepart(),collection.EnvoyerNiemeTrajet(collection.EnvoyerCard()-1).EnvoyerVilleArrivee()),
   trajetsComposants(collection)
 // Algorithme :
 //

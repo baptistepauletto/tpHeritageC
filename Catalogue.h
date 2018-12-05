@@ -45,8 +45,8 @@ public:
     // Contrat : Le trajet doit exister, bien entendu.
     //
 
-    void rechercherParcoursSimple(const char * & vDep,
-			    const char * & vFin) const;
+    void rechercherParcoursSimple(const char *  vDep,
+			    const char *  vFin) const;
     // Mode d'emploi : Nous récupérons dans la collection de trajets,
     // ceux qui possèdent une ville de départ ET une ville d'arrivée
     // égales aux paramètres, nous les affichons alors.
@@ -62,9 +62,9 @@ public:
     // Contrat :
     //
 
-    Catalogue ( );
+    Catalogue (Trajet & t);
     // Mode d'emploi :
-    // Constructeur de catalogue, ne prend pas de paramètres en entrée.
+    // Constructeur de catalogue, prend un premier trajet en paramètre.
     // Contrat :
     //
 
