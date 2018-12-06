@@ -28,17 +28,28 @@ using namespace std;
 char * TrajetCompose::EnvoyerVilleDepart() const
 {
   //on récupère le premier trajet de la collection et on affiche son départ
-  return trajetsComposants.EnvoyerNiemeTrajet(0).EnvoyerVilleDepart();
+  return villeDepart;
 }
 
 char * TrajetCompose::EnvoyerVilleArrivee() const
 {
   //on récupère le dernier trajet de la collection et on affiche son arrivée
-  return trajetsComposants.EnvoyerNiemeTrajet(trajetsComposants.EnvoyerCard()-1).EnvoyerVilleArrivee();
+  return villeArrivee;
 }
 
 
-
+bool TrajetCompose::Ajouter(Trajet & t)
+{
+  if(strcmp(t.EnvoyerVilleDepart(),villeArrivee) == 0)
+  {
+    std::cout << "ajout !" << '\n';
+    trajetsComposants.Ajouter(t);
+    strcpy(villeArrivee,t.EnvoyerVilleArrivee());
+    return true;
+  }
+  std::cout << "pas d'ajout :(" << '\n';
+  return false;
+}
 
 void TrajetCompose::Afficher ( void ) const
 // Algorithme :
@@ -47,9 +58,6 @@ void TrajetCompose::Afficher ( void ) const
   const int nbTrajets = trajetsComposants.EnvoyerCard();
   for (int i(0) ; i < nbTrajets; i++)
   {
-    #ifdef MAP
-        cout << "affichage du "<< i<< "eme trajet" << endl;
-    #endif
     const Trajet& iemeTrajet = trajetsComposants.EnvoyerNiemeTrajet(i);
     iemeTrajet.Afficher();
     if(i != nbTrajets-1)
@@ -70,19 +78,18 @@ void TrajetCompose::Afficher ( void ) const
 
 
 //-------------------------------------------- Constructeurs - destructeur
-TrajetCompose::TrajetCompose ( CollectionTrajet collection ) :
-  trajetsComposants(collection)
+TrajetCompose::TrajetCompose ( Trajet & t ) :
+  trajetsComposants(t)
 // Algorithme :
 //
 {
-
 #ifdef MAP
     cout << "Appel au constructeur de <TrajetCompose>" << endl;
 #endif
   villeDepart = new char [20];
   villeArrivee = new char [20];
-  strcpy(villeDepart,collection.EnvoyerNiemeTrajet(0).EnvoyerVilleDepart());
-  strcpy(villeArrivee,collection.EnvoyerNiemeTrajet(collection.EnvoyerCard()-1).EnvoyerVilleArrivee());
+  strcpy(villeDepart,t.EnvoyerVilleDepart());
+  strcpy(villeArrivee,t.EnvoyerVilleArrivee());
 
 } //----- Fin de TrajetCompose
 

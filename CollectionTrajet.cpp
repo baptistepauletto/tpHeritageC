@@ -89,11 +89,12 @@ CollectionTrajet::CollectionTrajet (Trajet & trajet, unsigned cardinaliteMaximal
 // Algorithme :
 //
 {
+	#ifdef MAP
+	    cout << "Appel au constructeur de <CollectionTrajet>" << endl;
+	#endif
 	trajets = new const Trajet * [cardMax];
 	trajets[0] = &trajet;
-#ifdef MAP
-    cout << "Appel au constructeur de <CollectionTrajet>" << endl;
-#endif
+
 } //----- Fin de CollectionTrajet
 
 

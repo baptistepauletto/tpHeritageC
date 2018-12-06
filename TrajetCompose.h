@@ -36,13 +36,31 @@ class TrajetCompose : public Trajet
 public:
 //----------------------------------------------------- Méthodes publiques
   virtual void Afficher () const;
-  // Mode d'emploi :
-  //
+  // Mode d'emploi : Affiche sur la sortie standard le déroulement du trajet
+  // composé, c'est à dire le départ, les étapes, l'arrivée et les différents
+  // moyens de transports entre.
   // Contrat :
   //
 
   virtual char * EnvoyerVilleDepart() const;
+  // Mode d'emploi :
+  // Renvoie la ville de départ, on effectue pas de passage par références
+  // car un char [20], n'est pas trop lourd.
+  // Contrat :
+  //
+
   virtual char * EnvoyerVilleArrivee() const;
+  // Mode d'emploi :
+  // Renvoie la ville d'arrivée, on effectue pas de passage par références
+  // car un char [20], n'est pas trop lourd.
+  // Contrat :
+
+  bool Ajouter(Trajet & t);
+  // Mode d'emploi : Ajoute un trajet t au trajet composé, mais verifie avant
+  // que les départ correspond à l'arrivée ddu trajet actuel.
+  // retourne un bool si le trajet a été ajouté ou non.
+  // Contrat :
+  //
 
 
 
@@ -55,8 +73,8 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    TrajetCompose (CollectionTrajet collection);
-    // Mode d'emploi :
+    TrajetCompose (Trajet & t);
+    // Mode d'emploi : Construit un trajet composé à partir d'un trajet
     //
     // Contrat :
     //
