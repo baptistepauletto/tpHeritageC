@@ -36,8 +36,7 @@ public:
 
 protected:
 //----------------------------------------------------- Méthodes protégées
-  Trajet(char * vDep, char * vArr) : villeDepart(vDep), villeArrivee(vArr)
-  {}
+
 //----------------------------------------------------- Attributs protégés
    char * villeDepart;
    char * villeArrivee;

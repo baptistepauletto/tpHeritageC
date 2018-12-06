@@ -13,6 +13,7 @@
 //-------------------------------------------------------- Include système
 #include <stdio.h>
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -46,6 +47,9 @@ void TrajetCompose::Afficher ( void ) const
   const int nbTrajets = trajetsComposants.EnvoyerCard();
   for (int i(0) ; i < nbTrajets; i++)
   {
+    #ifdef MAP
+        cout << "affichage du "<< i<< "eme trajet" << endl;
+    #endif
     const Trajet& iemeTrajet = trajetsComposants.EnvoyerNiemeTrajet(i);
     iemeTrajet.Afficher();
     if(i != nbTrajets-1)
@@ -67,14 +71,19 @@ void TrajetCompose::Afficher ( void ) const
 
 //-------------------------------------------- Constructeurs - destructeur
 TrajetCompose::TrajetCompose ( CollectionTrajet collection ) :
-  Trajet(collection.EnvoyerNiemeTrajet(0).EnvoyerVilleDepart(),collection.EnvoyerNiemeTrajet(collection.EnvoyerCard()-1).EnvoyerVilleArrivee()),
   trajetsComposants(collection)
 // Algorithme :
 //
 {
+
 #ifdef MAP
     cout << "Appel au constructeur de <TrajetCompose>" << endl;
 #endif
+  villeDepart = new char [20];
+  villeArrivee = new char [20];
+  strcpy(villeDepart,collection.EnvoyerNiemeTrajet(0).EnvoyerVilleDepart());
+  strcpy(villeArrivee,collection.EnvoyerNiemeTrajet(collection.EnvoyerCard()-1).EnvoyerVilleArrivee());
+
 } //----- Fin de TrajetCompose
 
 
@@ -85,6 +94,8 @@ TrajetCompose::~TrajetCompose ( )
 #ifdef MAP
     cout << "Appel au destructeur de <TrajetCompose>" << endl;
 #endif
+  delete [] villeDepart;
+  delete [] villeArrivee;
 } //----- Fin de ~TrajetCompose
 
 

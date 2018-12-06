@@ -70,9 +70,9 @@ const Trajet & CollectionTrajet::EnvoyerNiemeTrajet(const unsigned numTrajet) co
 CollectionTrajet::CollectionTrajet ( const CollectionTrajet & uneCollectionTrajet )
 // Algorithme :
 //
-: cardMax(uneCollectionTrajet.cardMax),
-cardActuelle(uneCollectionTrajet.cardActuelle),
-	trajets (nullptr)
+:	trajets (nullptr),
+cardMax(uneCollectionTrajet.cardMax),
+cardActuelle(uneCollectionTrajet.cardActuelle)
 
 {
 	trajets = uneCollectionTrajet.trajets;
@@ -103,8 +103,8 @@ CollectionTrajet::~CollectionTrajet ( )
 {
 #ifdef MAP
     cout << "Appel au destructeur de <CollectionTrajet>" << endl;
-		cout << "card max était :" << cardMax << endl;
-		cout << "card actuelle était :" << cardActuelle << endl;
+		cout << "		|card max était :" << cardMax << endl;
+		cout << "		|card actuelle était :" << cardActuelle << endl;
 
 #endif
 	delete [] trajets;

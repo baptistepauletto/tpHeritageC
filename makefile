@@ -5,7 +5,7 @@ EDL= g++
 CPPFLAGS= -ansi -pedantic -g -Wall -std=c++11 -D MAP
 EDLFLAGS=
 RMFLAGS= -f
-INT= Catalogue.h TrajetSimple.h TrajetCompose.h CollectionTrajet.h main.h
+INT= Catalogue.h TrajetSimple.h TrajetCompose.h CollectionTrajet.h test_trajetcompose.h
 REAL= $(INT:.h=.cpp)
 OBJ= $(REAL:.cpp=.o)
 LIBS=
@@ -14,9 +14,9 @@ LIBPATH=
 EFFACE= clean
 EXE= executable
 DATE= 19.11
-AUTHOR= Baptiste & Felix 
+AUTHOR= Baptiste & Felix
 YEAR= 2018
-EMAIL= baptiste.pauletto@insa-lyon.fr felix.fonteneau@insa-lyon.fr 
+EMAIL= baptiste.pauletto@insa-lyon.fr felix.fonteneau@insa-lyon.fr
 
 .PHONY: $(EFFACE)
 
@@ -39,4 +39,3 @@ CollectionTrajet.o : Trajet.h
 $(EFFACE) :
 	$(ECHO) "Suppression des fichiers"
 	$(RM) $(RMFLAGS) $(OBJ) $(EXE) core
-

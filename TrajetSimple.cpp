@@ -12,6 +12,7 @@
 
 //-------------------------------------------------------- Include système
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -46,14 +47,19 @@ void TrajetSimple::Afficher(void) const
 
 //-------------------------------------------- Constructeurs - destructeur
 TrajetSimple::TrajetSimple ( char * vDepart, char * vArrivee, eMoyenDeTransport mTransport)
-: 	Trajet(vDepart, vArrivee),
-	moyenDeTransport(mTransport)
+: 		moyenDeTransport(mTransport)
 // Algorithme :
 //
 {
+
 #ifdef MAP
     cout << "Appel au constructeur de <TrajetSimple>" << endl;
 #endif
+	villeDepart = new char [20];
+	villeArrivee = new char [20];
+	strcpy(villeDepart,vDepart);
+	strcpy(villeArrivee,vArrivee);
+
 
 } //----- Fin de TrajetSimple (constructeur de copie)
 
@@ -65,6 +71,8 @@ TrajetSimple::~TrajetSimple ( )
 #ifdef MAP
     cout << "Appel au destructeur de <TrajetSimple>" << endl;
 #endif
+	delete [] villeDepart;
+	delete [] villeArrivee;
 } //----- Fin de ~TrajetSimple
 
 
