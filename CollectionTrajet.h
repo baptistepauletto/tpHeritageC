@@ -58,7 +58,7 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    //CollectionTrajet ( const CollectionTrajet & uneCollectionTrajet );
+    CollectionTrajet ( const CollectionTrajet & uneCollectionTrajet );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :

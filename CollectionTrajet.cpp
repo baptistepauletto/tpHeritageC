@@ -42,7 +42,7 @@ void CollectionTrajet::Ajouter (const Trajet & tAjouter)
 		return; // C'est plein !
 	}
 	trajets[cardActuelle] = &tAjouter;
-	cardActuelle++;
+	++cardActuelle;
 } //----- Fin de Ajouter
 
 unsigned CollectionTrajet::EnvoyerCard () const
@@ -67,14 +67,19 @@ const Trajet & CollectionTrajet::EnvoyerNiemeTrajet(const unsigned numTrajet) co
 
 
 //-------------------------------------------- Constructeurs - destructeur
-//CollectionTrajet::CollectionTrajet ( const Xxx & uneCollectionTrajet )
+CollectionTrajet::CollectionTrajet ( const CollectionTrajet & uneCollectionTrajet )
 // Algorithme :
 //
-//{
-// #ifdef MAP
-//     cout << "Appel au constructeur de copie de <CollectionTrajet>" << endl;
-// #endif
-//} //----- Fin de CollectionTrajet (constructeur de copie)
+: cardMax(uneCollectionTrajet.cardMax),
+cardActuelle(uneCollectionTrajet.cardActuelle),
+	trajets (nullptr)
+
+{
+	trajets = uneCollectionTrajet.trajets;
+#ifdef MAP
+    cout << "Appel au constructeur de copie de <CollectionTrajet>" << endl;
+#endif
+} //----- Fin de CollectionTrajet (constructeur de copie)
 
 
 CollectionTrajet::CollectionTrajet (Trajet & trajet, unsigned cardinaliteMaximale)
@@ -96,10 +101,14 @@ CollectionTrajet::~CollectionTrajet ( )
 // Algorithme :
 //
 {
-	delete [] trajets;
 #ifdef MAP
     cout << "Appel au destructeur de <CollectionTrajet>" << endl;
+		cout << "card max était :" << cardMax << endl;
+		cout << "card actuelle était :" << cardActuelle << endl;
+
 #endif
+	delete [] trajets;
+
 } //----- Fin de ~CollectionTrajet
 
 

@@ -41,9 +41,11 @@ int main(){
 
 	catalogue1.AjouterTrajet(t20);
 
-	CollectionTrajet collection(t1,2);
+	CollectionTrajet collection(t1,3);
 	collection.Ajouter(t20);
+	std::cout << "trajet composé :" << '\n';
 	TrajetCompose tc1(collection);
+	std::cout << "afficher de trajet composé" << '\n';
 	tc1.Afficher();
 	catalogue1.AjouterTrajet(tc1);
 	catalogue1.Afficher();
