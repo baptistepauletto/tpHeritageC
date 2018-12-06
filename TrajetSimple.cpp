@@ -31,7 +31,7 @@ char * TrajetSimple::EnvoyerVilleArrivee() const
 	return villeArrivee;
 }
 
-eMoyenDeTransport TrajetSimple::EnvoyerMoyenDeTransport() const
+char * TrajetSimple::EnvoyerMoyenDeTransport() const
 {
 	return moyenDeTransport;
 }
@@ -46,8 +46,7 @@ void TrajetSimple::Afficher(void) const
 }//----- Fin de Afficher
 
 //-------------------------------------------- Constructeurs - destructeur
-TrajetSimple::TrajetSimple ( char * vDepart, char * vArrivee, eMoyenDeTransport mTransport)
-: 		moyenDeTransport(mTransport)
+TrajetSimple::TrajetSimple ( char * vDepart, char * vArrivee, char * mTransport)
 // Algorithme :
 //
 {
@@ -57,8 +56,10 @@ TrajetSimple::TrajetSimple ( char * vDepart, char * vArrivee, eMoyenDeTransport 
 #endif
 	villeDepart = new char [20];
 	villeArrivee = new char [20];
+	moyenDeTransport = new char [20];
 	strcpy(villeDepart,vDepart);
 	strcpy(villeArrivee,vArrivee);
+	strcpy(moyenDeTransport,mTransport);
 
 
 } //----- Fin de TrajetSimple (constructeur de copie)
@@ -73,6 +74,7 @@ TrajetSimple::~TrajetSimple ( )
 #endif
 	delete [] villeDepart;
 	delete [] villeArrivee;
+	delete [] moyenDeTransport;
 } //----- Fin de ~TrajetSimple
 
 
