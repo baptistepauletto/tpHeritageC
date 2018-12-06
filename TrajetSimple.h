@@ -31,17 +31,18 @@ public:
   virtual void Afficher () const;
   virtual char * EnvoyerVilleDepart() const;
   virtual char * EnvoyerVilleArrivee() const;
-  eMoyenDeTransport EnvoyerMoyenDeTransport() const;
+  char * EnvoyerMoyenDeTransport() const;
 
 //------------------------------------------------- Surcharge d'opérateurs
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    TrajetSimple ( char * villeDepart, char * villeArrivee, eMoyenDeTransport moyenDeTransport );
-    // Mode d'emploi (constructeur de copie) :
+    TrajetSimple ( char * vDepart, char * vArrivee, char * mTransport );
+    // Mode d'emploi:
     //
     // Contrat :
     // moyenDeTransport doit être un des élements suivants : {Train, Auto, Bateau, Avion, Velo}
+    // Référence à l'ancienne version utilisant alors une énum pour réprésenter les moyens de transport
 
     virtual ~TrajetSimple ( );
     // Mode d'emploi :
@@ -55,7 +56,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-	eMoyenDeTransport moyenDeTransport;
+	char * moyenDeTransport;
 };
 
 //-------------------------------- Autres définitions dépendantes de <TrajetSimple>
