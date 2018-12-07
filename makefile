@@ -5,7 +5,7 @@ EDL= g++
 CPPFLAGS= -ansi -pedantic -g -Wall -std=c++11 -D MAP
 EDLFLAGS=
 RMFLAGS= -f
-INT= Catalogue.h TrajetSimple.h TrajetCompose.h CollectionTrajet.h test_trajetcompose.h
+INT= Catalogue.h TrajetSimple.h TrajetCompose.h CollectionTrajet.h main.h
 REAL= $(INT:.h=.cpp)
 OBJ= $(REAL:.cpp=.o)
 LIBS=
