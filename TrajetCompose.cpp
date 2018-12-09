@@ -42,17 +42,22 @@ bool TrajetCompose::Ajouter(const Trajet & t)
 {
   if(strcmp(t.EnvoyerVilleDepart(),villeArrivee) == 0)
   {
-    std::cout << "ajout !" << '\n';
+    #ifdef MAP
+    cout << "Ajout du trajet au trajetCompose" << endl;
+    #endif
     trajetsComposants.Ajouter(t);
     strcpy(villeArrivee,t.EnvoyerVilleArrivee());
     return true;
   }
-  std::cout << "pas d'ajout :(" << '\n';
+    #ifdef MAP
+    cout << "Pas d'ajout du trajet au trajetCompose" << endl;
+    #endif
   return false;
 }
 
 void TrajetCompose::Afficher ( void ) const
-// Algorithme :
+// Algorithme : Une simple boucle fait alors appel à la méthode Afficher()
+// de tous les objets hétérogènes de la collection (TrajetSimple ou TrajetCompose)
 //
 {
   const int nbTrajets = trajetsComposants.EnvoyerCard();
@@ -80,8 +85,9 @@ void TrajetCompose::Afficher ( void ) const
 //-------------------------------------------- Constructeurs - destructeur
 TrajetCompose::TrajetCompose (const Trajet & t ) :
   trajetsComposants(t)
-// Algorithme :
-//
+// Algorithme : La logique utilisée est la même que pour les TrajetSimple,
+// ce dernier dispose simplement d'une CollectionTrajet en plus et ses attributs
+// sont déterminés automatiquement
 {
 #ifdef MAP
     cout << "Appel au constructeur de <TrajetCompose>" << endl;
