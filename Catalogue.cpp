@@ -47,7 +47,7 @@ void Catalogue::AjouterTrajet(const Trajet & t)
   trajetsDisponibles.Ajouter(t);
 }
 
-void Catalogue::rechercherParcoursSimple(const char *  vDep, const char *  vFin) const
+void Catalogue::RechercherParcoursSimple(const char *  vDep, const char *  vFin) const
 {
     cout << "Version simple :" << endl;
     const int nbTrajets = trajetsDisponibles.EnvoyerCard();

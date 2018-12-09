@@ -72,6 +72,16 @@ int main(){
 		if(strcmp(action,"afficher") == 0){
 			catalogue.Afficher();
 		}
+		if(strcmp(action,"recherche") == 0){
+			cin >> action;
+			if(strcmp(action,"V1") == 0){
+				cin >> action;
+				strcpy(villeDepartInit,action);
+				cin >> action;
+				strcpy(villeArriveeInit,action);
+				catalogue.RechercherParcoursSimple(villeDepartInit,villeArriveeInit);
+			}
+		}
 		if(strcmp(action,"help") == 0){
 			cout << "Les commandes disponibles sont : \r\n"
 			     << "Ajouter un trajet simple : insert TS <villeDepart> <villeArrivee> <moyenDeTransport> \r\n"
