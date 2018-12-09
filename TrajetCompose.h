@@ -22,9 +22,9 @@
 // Un trajet composé hérite des caractéristiques de la classe Trajet,
 // mais en se distinguant d'un trajet simple de sa composition.
 // En effet, un trajet composé va etre composé de trajets simples et/ou de trajets composés.
-// Il y aura donc une succession de trajets qui sont relié par leur par des villes étapes
+// Il y aura donc une succession de trajets qui sont relié par des villes dites étapes
 // (pour chaque ville de fin de trajet composant différent de la ville d'arrivée, il existe une même ville de départ de trajet composant).
-// Ceci explique la liste de trajets.
+// Ceci explique la liste de trajets du type CollectionTrajet.
 
 
 //------------------------------------------------------------------------
