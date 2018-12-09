@@ -65,14 +65,13 @@ public:
     Catalogue (Trajet & t);
     // Mode d'emploi :
     // Constructeur de catalogue, prend un premier trajet en paramètre.
-    // Contrat :
+    // Contrat : Le trajet passé en paramètre est forcément existant.
     //
 
     virtual ~Catalogue ( );
     // Mode d'emploi :
     // Destructeur de catalogue.
-    // Contrat :
-    //
+
 
 //------------------------------------------------------------------ PRIVE
 
