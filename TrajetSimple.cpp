@@ -47,7 +47,9 @@ void TrajetSimple::Afficher(void) const
 
 //-------------------------------------------- Constructeurs - destructeur
 TrajetSimple::TrajetSimple ( char * vDepart, char * vArrivee, char * mTransport)
-// Algorithme :
+// Algorithme : Les attributs sont déclarés dans le corps du constructeur 
+// afin de pouvoir les détruire proprement à la destruction de l'objet, 
+// ce qui s'avérait plus difficile avec la construction du type () : {} 
 //
 {
 
