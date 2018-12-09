@@ -74,10 +74,9 @@ public:
 
 //-------------------------------------------- Constructeurs - destructeur
     TrajetCompose (const Trajet & t);
-    // Mode d'emploi : Construit un trajet composé à partir d'un trajet
-    //
-    // Contrat :
-    //
+    // Mode d'emploi : Construit un trajet composé à partir d'un Trajet
+    // peu importe qu'il soit simple ou composé
+    // Contrat : Le Trajet doit exister bien entendu.
 
     virtual ~TrajetCompose ( );
     // Mode d'emploi :
