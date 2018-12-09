@@ -19,6 +19,8 @@ enum eMoyenDeTransport {Train, Auto, Bateau, Avion, Velo};
 //------------------------------------------------------------------------
 // Rôle de la classe <TrajetSimple>
 //	Définir	un trajet par sa ville de départ, sa ville d'arrivée et son moyen de transport
+//	Cette classe constitue aussi la brique de base des trajets composés, qui, peuvent être 
+//      de plusieurs trajets simples ou bien d'autres trajets composés.  
 //
 //------------------------------------------------------------------------
 
@@ -38,17 +40,14 @@ public:
 
 //-------------------------------------------- Constructeurs - destructeur
     TrajetSimple ( char * vDepart, char * vArrivee, char * mTransport );
-    // Mode d'emploi:
-    //
+    // Mode d'emploi: Constructeur classique
     // Contrat :
     // moyenDeTransport doit être un des élements suivants : {Train, Auto, Bateau, Avion, Velo}
     // Référence à l'ancienne version utilisant alors une énum pour réprésenter les moyens de transport
 
     virtual ~TrajetSimple ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+    // Mode d'emploi : Destructeur classique
+
 
 //------------------------------------------------------------------ PRIVE
 
