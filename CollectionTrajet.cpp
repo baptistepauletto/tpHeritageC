@@ -82,7 +82,7 @@ cardActuelle(uneCollectionTrajet.cardActuelle)
 } //----- Fin de CollectionTrajet (constructeur de copie)
 
 
-CollectionTrajet::CollectionTrajet (Trajet & trajet, unsigned cardinaliteMaximale)
+CollectionTrajet::CollectionTrajet (const Trajet & trajet, unsigned cardinaliteMaximale)
 : 	trajets (nullptr),
 	cardMax (cardinaliteMaximale),
 	cardActuelle (1)

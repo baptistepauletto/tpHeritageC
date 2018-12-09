@@ -38,7 +38,7 @@ char * TrajetCompose::EnvoyerVilleArrivee() const
 }
 
 
-bool TrajetCompose::Ajouter(Trajet & t)
+bool TrajetCompose::Ajouter(const Trajet & t)
 {
   if(strcmp(t.EnvoyerVilleDepart(),villeArrivee) == 0)
   {
@@ -78,7 +78,7 @@ void TrajetCompose::Afficher ( void ) const
 
 
 //-------------------------------------------- Constructeurs - destructeur
-TrajetCompose::TrajetCompose ( Trajet & t ) :
+TrajetCompose::TrajetCompose (const Trajet & t ) :
   trajetsComposants(t)
 // Algorithme :
 //

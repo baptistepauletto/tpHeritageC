@@ -6,6 +6,7 @@
 #include "TrajetSimple.h"
 #include "TrajetCompose.h"
 
+
 using namespace std;
 
 int main(){
@@ -21,8 +22,12 @@ int main(){
 	cout << "Bienvenue dans notre mini application de gestion de trajet ! \r\n"
 	     << "Si vous souhaitez consulter la liste des commandes, tapez help." << endl;
 	char * action = new char[50];
-	TrajetSimple * adresses[50];
+	TrajetSimple * trajetsSimples[50];
+	const TrajetSimple * trajetsSimplesComposants[50];
+	TrajetCompose * trajetsComposes[50];
 	unsigned cptTrajetsSimples = 0;
+	unsigned cptTrajetsComposes = 0;
+	unsigned cptTrajetsSimplesComposants = 0;
 	//TrajetSimple * trajetS = nullptr;
 	//TrajetCompose * trajetC = nullptr;
 	cin >> action;	
@@ -31,26 +36,37 @@ int main(){
 			cout<<"rentré insert" << endl;
 			cin >> action;
 			if(strcmp(action,"TS") == 0){
-				cout<< "rentré TS" << endl;
-				//ajouterTrajetSimple(villeDepartInit,villeArriveeInit,moyenDeTransportInit,action,trajetS,catalogue);
 				cin >> action;
 				strcpy(villeDepartInit,action);
 				cin >> action;
 				strcpy(villeArriveeInit,action);
 				cin >> action;
 				strcpy(moyenDeTransportInit,action);
-				adresses[cptTrajetsSimples] = new TrajetSimple(villeDepartInit,villeArriveeInit,moyenDeTransportInit);
-				//trajetS = new TrajetSimple(villeDepartInit,villeArriveeInit,moyenDeTransportInit);
-				catalogue.AjouterTrajet(*adresses[cptTrajetsSimples]);
+				trajetsSimples[cptTrajetsSimples] = new TrajetSimple(villeDepartInit,villeArriveeInit,moyenDeTransportInit);
+				catalogue.AjouterTrajet(*trajetsSimples[cptTrajetsSimples]);
 				cptTrajetsSimples++;
 			}
 			if(strcmp(action,"TC") == 0){
 				cout << "rentré TC"<<endl;
-				//unsigned cptTrajet = 0;
-				//cin >> cptTrajet;
-				//for(unsigned i (0); i < cptTrajet; i++){
-					
-				//}
+				unsigned cptTrajet = 0;
+				cin >> cptTrajet;
+				for(unsigned i (0); i < cptTrajet; i++){	
+					cin >> action;
+					strcpy(villeDepartInit,action);
+					cin >> action;
+					strcpy(villeArriveeInit,action);
+					cin >> action;
+					strcpy(moyenDeTransportInit,action);
+					trajetsSimplesComposants[cptTrajetsSimplesComposants] = new TrajetSimple(villeDepartInit,villeArriveeInit,moyenDeTransportInit);
+					if(i==0){
+						trajetsComposes[cptTrajetsComposes] = new TrajetCompose(*trajetsSimplesComposants[cptTrajetsSimplesComposants]);
+					} else {
+						trajetsComposes[cptTrajetsComposes]->Ajouter(*trajetsSimplesComposants[cptTrajetsSimplesComposants]);
+					}
+					cptTrajetsSimplesComposants++;
+				}
+				catalogue.AjouterTrajet(*trajetsComposes[cptTrajetsComposes]);
+				cptTrajetsComposes++;
 			}
 		}
 		if(strcmp(action,"afficher") == 0){
@@ -70,10 +86,14 @@ int main(){
 	
 	delete [] action;
 	for(unsigned i(0); i<cptTrajetsSimples;i++){
-		delete adresses[i];
+		delete trajetsSimples[i];
 	}
-	//delete trajetS;
-	//delete trajetC;
+	for(unsigned i(0); i<cptTrajetsSimplesComposants;i++){
+		delete trajetsSimplesComposants[i];
+	}
+	for(unsigned i(0); i<cptTrajetsComposes;i++){
+		delete trajetsComposes[i];
+	}
 	delete [] villeDepartInit;	
 	delete [] villeArriveeInit;	
 	delete [] moyenDeTransportInit;	

@@ -64,7 +64,7 @@ public:
     // Contrat :
     //
 
-    CollectionTrajet (Trajet & t, unsigned cardinaliteMaximale = 10);
+    CollectionTrajet (const Trajet & t, unsigned cardinaliteMaximale = 10);
     // Mode d'emploi : Construit une structure de données de cardinalité
     // maximale 10 et initialise sa cardinalité actuelle à 0.
     //L'objet nécessite un premier trajet pour être initialisé

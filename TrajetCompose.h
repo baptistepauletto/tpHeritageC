@@ -55,7 +55,7 @@ public:
   // car un char [20], n'est pas trop lourd.
   // Contrat :
 
-  bool Ajouter(Trajet & t);
+  bool Ajouter(const Trajet & t);
   // Mode d'emploi : Ajoute un trajet t au trajet composé, mais verifie avant
   // que les départ correspond à l'arrivée ddu trajet actuel.
   // retourne un bool si le trajet a été ajouté ou non.
@@ -73,7 +73,7 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    TrajetCompose (Trajet & t);
+    TrajetCompose (const Trajet & t);
     // Mode d'emploi : Construit un trajet composé à partir d'un trajet
     //
     // Contrat :
