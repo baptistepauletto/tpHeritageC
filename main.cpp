@@ -20,6 +20,7 @@ int main(){
 	Catalogue catalogue(trajetInit);
 	
 	char * action = new char[50];
+	TrajetSimple * trajetS = nullptr;
 	cin >> action;	
 	while(strcmp(action,"quit") != 0){
 		if(strcmp(action,"insert") == 0){
@@ -33,8 +34,8 @@ int main(){
 				strcpy(villeArriveeInit,action);
 				cin >> action;
 				strcpy(moyenDeTransportInit,action);
-				static TrajetSimple trajetS(villeDepartInit,villeArriveeInit,moyenDeTransportInit);
-				catalogue.AjouterTrajet(trajetS);
+				trajetS = new TrajetSimple(villeDepartInit,villeArriveeInit,moyenDeTransportInit);
+				catalogue.AjouterTrajet(*trajetS);
 			}
 			if(strcmp(action,"TC") == 0){
 				cout << "rentré TS"<<endl;
@@ -46,7 +47,8 @@ int main(){
 		cin >> action;
 	}
 	
-	delete [] action;	
+	delete [] action;
+	delete trajetS;
 	delete [] villeDepartInit;	
 	delete [] villeArriveeInit;	
 	delete [] moyenDeTransportInit;	
