@@ -18,8 +18,12 @@
 
 //------------------------------------------------------------------------
 // Rôle de la classe <CollectionTrajet>
-//
-//
+// Le rôle de la classe CollectionTrajet, comme son nom l'indique est de contenir 
+// des objets hétérogènes dans une collection. En effet, nous avons fait le choix
+// d'encapsuler la structure de données dans une classe afin de permettre la modification
+// de l'implémentation de ce dernier sans pour autant modifier chacune des classes intervenantes.
+// Ce choix s'apparente donc à de l'indépendance du système de sa structure de données,
+// il ne fait que l'utiliser sans dépendre de son implémentation.
 //------------------------------------------------------------------------
 
 class CollectionTrajet
