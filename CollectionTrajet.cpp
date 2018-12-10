@@ -29,14 +29,17 @@ void CollectionTrajet::Ajouter (const Trajet & tAjouter)
 // à l'intérieur de l'ensemble des trajets puis ajout de ce dernier.
 //
 {
-	// for(unsigned i(0); i < cardActuelle; i++ )
-	// {
-	// 	if (strcmp(tAjouter.EnvoyerVilleDepart(),trajets[i]->EnvoyerVilleDepart()) == 0
-	// 	&& strcmp(tAjouter.EnvoyerVilleArrivee(),trajets[i]->EnvoyerVilleArrivee()) == 0)
-	// 	{
-	// 		return; //déjà présent !
-	// 	}
-	// }
+	 for(unsigned i(0); i < cardActuelle; i++ )
+	 {
+	 	if (strcmp(tAjouter.EnvoyerVilleDepart(),trajets[i]->EnvoyerVilleDepart()) == 0
+	 	&& strcmp(tAjouter.EnvoyerVilleArrivee(),trajets[i]->EnvoyerVilleArrivee()) == 0)
+	 	{	
+			#ifdef MAP
+	 			cout << "TrajetSimple déjà présent !!!!" <<endl;
+			#endif
+			return; //déjà présent !
+	 	}
+	 }
 
 	if (cardActuelle == cardMax){
 		//nouvelle allocation d'un espace plus grand 
