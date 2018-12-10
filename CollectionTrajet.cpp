@@ -39,7 +39,16 @@ void CollectionTrajet::Ajouter (const Trajet & tAjouter)
 	// }
 
 	if (cardActuelle == cardMax){
-		return; // C'est plein !
+		//nouvelle allocation d'un espace plus grand 
+		const Trajet * * nouveauxTrajets = new const Trajet * [cardMax+5];
+		//début copie 
+		for(unsigned i(0); i< cardMax; i++){
+			nouveauxTrajets[i] = trajets[i];
+		} // fin copie
+		//rendre l'espace précedemment alloué
+		delete [] trajets;
+		trajets = nouveauxTrajets;
+		cardMax += 5;
 	}
 	trajets[cardActuelle] = &tAjouter;
 	++cardActuelle;
